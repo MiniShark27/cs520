@@ -77,4 +77,11 @@ public class RowBlockModel {
         this.contents = "";
         this.isLegalMove = false;
     }
+
+    @Override
+    public boolean equals(Object other) {
+        if (other instanceof RowBlockModel)
+            return this.getContents().equals(((RowBlockModel) other).getContents());
+        return false;
+    }
 }

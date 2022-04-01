@@ -45,13 +45,13 @@ public class RowGameController {
 				gameView.updateBlock(gameModel, 0, 0);
 				gameModel.player = "2";
 				if (gameModel.movesLeft < 7) {
-					if ((gameModel.blocksData[0][0].getContents().equals(gameModel.blocksData[0][1].getContents()) &&
-							gameModel.blocksData[0][1].getContents().equals(gameModel.blocksData[0][2].getContents())) ||
-							(gameModel.blocksData[0][0].getContents().equals(gameModel.blocksData[1][0].getContents()) &&
-									gameModel.blocksData[1][0].getContents().equals(gameModel.blocksData[2][0].getContents()))
+					if ((gameModel.blocksData[0][0].equals(gameModel.blocksData[0][1]) &&
+							gameModel.blocksData[0][1].equals(gameModel.blocksData[0][2])) ||
+							(gameModel.blocksData[0][0].equals(gameModel.blocksData[1][0]) &&
+									gameModel.blocksData[1][0].equals(gameModel.blocksData[2][0]))
 							||
-							(gameModel.blocksData[0][0].getContents().equals(gameModel.blocksData[1][1].getContents()) &&
-									gameModel.blocksData[1][1].getContents().equals(gameModel.blocksData[2][2].getContents()))) {
+							(gameModel.blocksData[0][0].equals(gameModel.blocksData[1][1]) &&
+									gameModel.blocksData[1][1].equals(gameModel.blocksData[2][2]))) {
 						gameModel.setFinalResult("Player 1 wins!");
 						endGame();
 					} else if (gameModel.movesLeft == 0) {
@@ -66,10 +66,10 @@ public class RowGameController {
 				gameView.updateBlock(gameModel, 0, 1);
 				gameModel.player = "2";
 				if (gameModel.movesLeft < 7) {
-					if ((gameModel.blocksData[0][1].getContents().equals(gameModel.blocksData[0][0].getContents()) &&
-							gameModel.blocksData[0][0].getContents().equals(gameModel.blocksData[0][2].getContents())) ||
-							(gameModel.blocksData[0][1].getContents().equals(gameModel.blocksData[1][1].getContents()) &&
-									gameModel.blocksData[1][1].getContents().equals(gameModel.blocksData[2][1].getContents()))) {
+					if ((gameModel.blocksData[0][1].equals(gameModel.blocksData[0][0]) &&
+							gameModel.blocksData[0][0].equals(gameModel.blocksData[0][2])) ||
+							(gameModel.blocksData[0][1].equals(gameModel.blocksData[1][1]) &&
+									gameModel.blocksData[1][1].equals(gameModel.blocksData[2][1]))) {
 						gameModel.setFinalResult("Player 1 wins!");
 						endGame();
 					} else if (gameModel.movesLeft == 0) {
@@ -84,13 +84,13 @@ public class RowGameController {
 				gameView.updateBlock(gameModel, 0, 2);
 				gameModel.player = "2";
 				if (gameModel.movesLeft < 7) {
-					if ((gameModel.blocksData[0][2].getContents().equals(gameModel.blocksData[0][1].getContents()) &&
-							gameModel.blocksData[0][1].getContents().equals(gameModel.blocksData[0][0].getContents())) ||
-							(gameModel.blocksData[0][2].getContents().equals(gameModel.blocksData[1][2].getContents()) &&
-									gameModel.blocksData[1][2].getContents().equals(gameModel.blocksData[2][2].getContents()))
+					if ((gameModel.blocksData[0][2].equals(gameModel.blocksData[0][1]) &&
+							gameModel.blocksData[0][1].equals(gameModel.blocksData[0][0])) ||
+							(gameModel.blocksData[0][2].equals(gameModel.blocksData[1][2]) &&
+									gameModel.blocksData[1][2].equals(gameModel.blocksData[2][2]))
 							||
-							(gameModel.blocksData[0][2].getContents().equals(gameModel.blocksData[1][1].getContents()) &&
-									gameModel.blocksData[1][1].getContents().equals(gameModel.blocksData[2][0].getContents()))) {
+							(gameModel.blocksData[0][2].equals(gameModel.blocksData[1][1]) &&
+									gameModel.blocksData[1][1].equals(gameModel.blocksData[2][0]))) {
 						gameModel.setFinalResult("Player 1 wins!");
 						endGame();
 					} else if (gameModel.movesLeft == 0) {
@@ -105,10 +105,10 @@ public class RowGameController {
 				gameView.updateBlock(gameModel, 1, 0);
 				gameModel.player = "2";
 				if (gameModel.movesLeft < 7) {
-					if ((gameModel.blocksData[1][0].getContents().equals(gameModel.blocksData[1][1].getContents()) &&
-							gameModel.blocksData[1][1].getContents().equals(gameModel.blocksData[1][2].getContents())) ||
-							(gameModel.blocksData[1][0].getContents().equals(gameModel.blocksData[0][0].getContents()) &&
-									gameModel.blocksData[0][0].getContents().equals(gameModel.blocksData[2][0].getContents()))) {
+					if ((gameModel.blocksData[1][0].equals(gameModel.blocksData[1][1]) &&
+							gameModel.blocksData[1][1].equals(gameModel.blocksData[1][2])) ||
+							(gameModel.blocksData[1][0].equals(gameModel.blocksData[0][0]) &&
+									gameModel.blocksData[0][0].equals(gameModel.blocksData[2][0]))) {
 						gameModel.setFinalResult("Player 1 wins!");
 						endGame();
 					} else if (gameModel.movesLeft == 0) {
@@ -123,16 +123,16 @@ public class RowGameController {
 				gameView.updateBlock(gameModel, 1, 1);
 				gameModel.player = "2";
 				if (gameModel.movesLeft < 7) {
-					if ((gameModel.blocksData[1][1].getContents().equals(gameModel.blocksData[1][0].getContents()) &&
-							gameModel.blocksData[1][0].getContents().equals(gameModel.blocksData[1][2].getContents())) ||
-							(gameModel.blocksData[1][1].getContents().equals(gameModel.blocksData[0][1].getContents()) &&
-									gameModel.blocksData[0][1].getContents().equals(gameModel.blocksData[2][1].getContents()))
+					if ((gameModel.blocksData[1][1].equals(gameModel.blocksData[1][0]) &&
+							gameModel.blocksData[1][0].equals(gameModel.blocksData[1][2])) ||
+							(gameModel.blocksData[1][1].equals(gameModel.blocksData[0][1]) &&
+									gameModel.blocksData[0][1].equals(gameModel.blocksData[2][1]))
 							||
-							(gameModel.blocksData[1][1].getContents().equals(gameModel.blocksData[0][0].getContents()) &&
-									gameModel.blocksData[0][0].getContents().equals(gameModel.blocksData[2][2].getContents()))
+							(gameModel.blocksData[1][1].equals(gameModel.blocksData[0][0]) &&
+									gameModel.blocksData[0][0].equals(gameModel.blocksData[2][2]))
 							||
-							(gameModel.blocksData[1][1].getContents().equals(gameModel.blocksData[0][2].getContents()) &&
-									gameModel.blocksData[0][2].getContents().equals(gameModel.blocksData[2][0].getContents()))) {
+							(gameModel.blocksData[1][1].equals(gameModel.blocksData[0][2]) &&
+									gameModel.blocksData[0][2].equals(gameModel.blocksData[2][0]))) {
 						gameModel.setFinalResult("Player 1 wins!");
 						endGame();
 					} else if (gameModel.movesLeft == 0) {
@@ -147,10 +147,10 @@ public class RowGameController {
 				gameView.updateBlock(gameModel, 1, 2);
 				gameModel.player = "2";
 				if (gameModel.movesLeft < 7) {
-					if ((gameModel.blocksData[1][2].getContents().equals(gameModel.blocksData[0][2].getContents()) &&
-							gameModel.blocksData[0][2].getContents().equals(gameModel.blocksData[2][2].getContents())) ||
-							(gameModel.blocksData[1][2].getContents().equals(gameModel.blocksData[1][1].getContents()) &&
-									gameModel.blocksData[1][1].getContents().equals(gameModel.blocksData[1][0].getContents()))) {
+					if ((gameModel.blocksData[1][2].equals(gameModel.blocksData[0][2]) &&
+							gameModel.blocksData[0][2].equals(gameModel.blocksData[2][2])) ||
+							(gameModel.blocksData[1][2].equals(gameModel.blocksData[1][1]) &&
+									gameModel.blocksData[1][1].equals(gameModel.blocksData[1][0]))) {
 						gameModel.setFinalResult("Player 1 wins!");
 						endGame();
 					} else if (gameModel.movesLeft == 0) {
@@ -165,13 +165,13 @@ public class RowGameController {
 				gameView.updateBlock(gameModel, 2, 0);
 				gameModel.player = "2";
 				if (gameModel.movesLeft < 7) {
-					if ((gameModel.blocksData[2][0].getContents().equals(gameModel.blocksData[2][1].getContents()) &&
-							gameModel.blocksData[2][1].getContents().equals(gameModel.blocksData[2][2].getContents())) ||
-							(gameModel.blocksData[2][0].getContents().equals(gameModel.blocksData[1][0].getContents()) &&
-									gameModel.blocksData[1][0].getContents().equals(gameModel.blocksData[0][0].getContents()))
+					if ((gameModel.blocksData[2][0].equals(gameModel.blocksData[2][1]) &&
+							gameModel.blocksData[2][1].equals(gameModel.blocksData[2][2])) ||
+							(gameModel.blocksData[2][0].equals(gameModel.blocksData[1][0]) &&
+									gameModel.blocksData[1][0].equals(gameModel.blocksData[0][0]))
 							||
-							(gameModel.blocksData[2][0].getContents().equals(gameModel.blocksData[1][1].getContents()) &&
-									gameModel.blocksData[1][1].getContents().equals(gameModel.blocksData[0][2].getContents()))) {
+							(gameModel.blocksData[2][0].equals(gameModel.blocksData[1][1]) &&
+									gameModel.blocksData[1][1].equals(gameModel.blocksData[0][2]))) {
 						gameModel.setFinalResult("Player 1 wins!");
 						endGame();
 					} else if (gameModel.movesLeft == 0) {
@@ -186,10 +186,10 @@ public class RowGameController {
 				gameView.updateBlock(gameModel, 2, 1);
 				gameModel.player = "2";
 				if (gameModel.movesLeft < 7) {
-					if ((gameModel.blocksData[2][1].getContents().equals(gameModel.blocksData[2][0].getContents()) &&
-							gameModel.blocksData[2][0].getContents().equals(gameModel.blocksData[2][2].getContents())) ||
-							(gameModel.blocksData[2][1].getContents().equals(gameModel.blocksData[1][1].getContents()) &&
-									gameModel.blocksData[1][1].getContents().equals(gameModel.blocksData[0][1].getContents()))) {
+					if ((gameModel.blocksData[2][1].equals(gameModel.blocksData[2][0]) &&
+							gameModel.blocksData[2][0].equals(gameModel.blocksData[2][2])) ||
+							(gameModel.blocksData[2][1].equals(gameModel.blocksData[1][1]) &&
+									gameModel.blocksData[1][1].equals(gameModel.blocksData[0][1]))) {
 						gameModel.setFinalResult("Player 1 wins!");
 						endGame();
 					} else if (gameModel.movesLeft == 0) {
@@ -204,13 +204,13 @@ public class RowGameController {
 				gameView.updateBlock(gameModel, 2, 2);
 				gameModel.player = "2";
 				if (gameModel.movesLeft < 7) {
-					if ((gameModel.blocksData[2][2].getContents().equals(gameModel.blocksData[2][1].getContents()) &&
-							gameModel.blocksData[2][1].getContents().equals(gameModel.blocksData[2][0].getContents())) ||
-							(gameModel.blocksData[2][2].getContents().equals(gameModel.blocksData[1][2].getContents()) &&
-									gameModel.blocksData[1][2].getContents().equals(gameModel.blocksData[0][2].getContents()))
+					if ((gameModel.blocksData[2][2].equals(gameModel.blocksData[2][1]) &&
+							gameModel.blocksData[2][1].equals(gameModel.blocksData[2][0])) ||
+							(gameModel.blocksData[2][2].equals(gameModel.blocksData[1][2]) &&
+									gameModel.blocksData[1][2].equals(gameModel.blocksData[0][2]))
 							||
-							(gameModel.blocksData[2][2].getContents().equals(gameModel.blocksData[1][1].getContents()) &&
-									gameModel.blocksData[1][1].getContents().equals(gameModel.blocksData[0][0].getContents()))) {
+							(gameModel.blocksData[2][2].equals(gameModel.blocksData[1][1]) &&
+									gameModel.blocksData[1][1].equals(gameModel.blocksData[0][0]))) {
 						gameModel.setFinalResult("Player 1 wins!");
 						endGame();
 					} else if (gameModel.movesLeft == 0) {
@@ -228,13 +228,13 @@ public class RowGameController {
 				gameView.updateBlock(gameModel, 0, 0);
 				gameModel.player = "1";
 				if (gameModel.movesLeft < 7) {
-					if ((gameModel.blocksData[0][0].getContents().equals(gameModel.blocksData[0][1].getContents()) &&
-							gameModel.blocksData[0][1].getContents().equals(gameModel.blocksData[0][2].getContents())) ||
-							(gameModel.blocksData[0][0].getContents().equals(gameModel.blocksData[1][0].getContents()) &&
-									gameModel.blocksData[1][0].getContents().equals(gameModel.blocksData[2][0].getContents()))
+					if ((gameModel.blocksData[0][0].equals(gameModel.blocksData[0][1]) &&
+							gameModel.blocksData[0][1].equals(gameModel.blocksData[0][2])) ||
+							(gameModel.blocksData[0][0].equals(gameModel.blocksData[1][0]) &&
+									gameModel.blocksData[1][0].equals(gameModel.blocksData[2][0]))
 							||
-							(gameModel.blocksData[0][0].getContents().equals(gameModel.blocksData[1][1].getContents()) &&
-									gameModel.blocksData[1][1].getContents().equals(gameModel.blocksData[2][2].getContents()))) {
+							(gameModel.blocksData[0][0].equals(gameModel.blocksData[1][1]) &&
+									gameModel.blocksData[1][1].equals(gameModel.blocksData[2][2]))) {
 						gameModel.setFinalResult("Player 2 wins!");
 						endGame();
 					} else if (gameModel.movesLeft == 0) {
@@ -249,10 +249,10 @@ public class RowGameController {
 				gameView.updateBlock(gameModel, 0, 1);
 				gameModel.player = "1";
 				if (gameModel.movesLeft < 7) {
-					if ((gameModel.blocksData[0][1].getContents().equals(gameModel.blocksData[0][0].getContents()) &&
-							gameModel.blocksData[0][0].getContents().equals(gameModel.blocksData[0][2].getContents())) ||
-							(gameModel.blocksData[0][1].getContents().equals(gameModel.blocksData[1][1].getContents()) &&
-									gameModel.blocksData[1][1].getContents().equals(gameModel.blocksData[2][1].getContents()))) {
+					if ((gameModel.blocksData[0][1].equals(gameModel.blocksData[0][0]) &&
+							gameModel.blocksData[0][0].equals(gameModel.blocksData[0][2])) ||
+							(gameModel.blocksData[0][1].equals(gameModel.blocksData[1][1]) &&
+									gameModel.blocksData[1][1].equals(gameModel.blocksData[2][1]))) {
 						gameModel.setFinalResult("Player 2 wins!");
 						endGame();
 					} else if (gameModel.movesLeft == 0) {
@@ -267,13 +267,13 @@ public class RowGameController {
 				gameView.updateBlock(gameModel, 0, 2);
 				gameModel.player = "1";
 				if (gameModel.movesLeft < 7) {
-					if ((gameModel.blocksData[0][2].getContents().equals(gameModel.blocksData[0][1].getContents()) &&
-							gameModel.blocksData[0][1].getContents().equals(gameModel.blocksData[0][0].getContents())) ||
-							(gameModel.blocksData[0][2].getContents().equals(gameModel.blocksData[1][2].getContents()) &&
-									gameModel.blocksData[1][2].getContents().equals(gameModel.blocksData[2][2].getContents()))
+					if ((gameModel.blocksData[0][2].equals(gameModel.blocksData[0][1]) &&
+							gameModel.blocksData[0][1].equals(gameModel.blocksData[0][0])) ||
+							(gameModel.blocksData[0][2].equals(gameModel.blocksData[1][2]) &&
+									gameModel.blocksData[1][2].equals(gameModel.blocksData[2][2]))
 							||
-							(gameModel.blocksData[0][2].getContents().equals(gameModel.blocksData[1][1].getContents()) &&
-									gameModel.blocksData[1][1].getContents().equals(gameModel.blocksData[2][0].getContents()))) {
+							(gameModel.blocksData[0][2].equals(gameModel.blocksData[1][1]) &&
+									gameModel.blocksData[1][1].equals(gameModel.blocksData[2][0]))) {
 						gameModel.setFinalResult("Player 2 wins!");
 						endGame();
 					} else if (gameModel.movesLeft == 0) {
@@ -288,10 +288,10 @@ public class RowGameController {
 				gameView.updateBlock(gameModel, 1, 0);
 				gameModel.player = "1";
 				if (gameModel.movesLeft < 7) {
-					if ((gameModel.blocksData[1][0].getContents().equals(gameModel.blocksData[1][1].getContents()) &&
-							gameModel.blocksData[1][1].getContents().equals(gameModel.blocksData[1][2].getContents())) ||
-							(gameModel.blocksData[1][0].getContents().equals(gameModel.blocksData[0][0].getContents()) &&
-									gameModel.blocksData[0][0].getContents().equals(gameModel.blocksData[2][0].getContents()))) {
+					if ((gameModel.blocksData[1][0].equals(gameModel.blocksData[1][1]) &&
+							gameModel.blocksData[1][1].equals(gameModel.blocksData[1][2])) ||
+							(gameModel.blocksData[1][0].equals(gameModel.blocksData[0][0]) &&
+									gameModel.blocksData[0][0].equals(gameModel.blocksData[2][0]))) {
 						gameModel.setFinalResult("Player 2 wins!");
 						endGame();
 					} else if (gameModel.movesLeft == 0) {
@@ -306,16 +306,16 @@ public class RowGameController {
 				gameView.updateBlock(gameModel, 1, 1);
 				gameModel.player = "1";
 				if (gameModel.movesLeft < 7) {
-					if ((gameModel.blocksData[1][1].getContents().equals(gameModel.blocksData[1][0].getContents()) &&
-							gameModel.blocksData[1][0].getContents().equals(gameModel.blocksData[1][2].getContents())) ||
-							(gameModel.blocksData[1][1].getContents().equals(gameModel.blocksData[0][1].getContents()) &&
-									gameModel.blocksData[0][1].getContents().equals(gameModel.blocksData[2][1].getContents()))
+					if ((gameModel.blocksData[1][1].equals(gameModel.blocksData[1][0]) &&
+							gameModel.blocksData[1][0].equals(gameModel.blocksData[1][2])) ||
+							(gameModel.blocksData[1][1].equals(gameModel.blocksData[0][1]) &&
+									gameModel.blocksData[0][1].equals(gameModel.blocksData[2][1]))
 							||
-							(gameModel.blocksData[1][1].getContents().equals(gameModel.blocksData[0][0].getContents()) &&
-									gameModel.blocksData[0][0].getContents().equals(gameModel.blocksData[2][2].getContents()))
+							(gameModel.blocksData[1][1].equals(gameModel.blocksData[0][0]) &&
+									gameModel.blocksData[0][0].equals(gameModel.blocksData[2][2]))
 							||
-							(gameModel.blocksData[1][1].getContents().equals(gameModel.blocksData[0][2].getContents()) &&
-									gameModel.blocksData[0][2].getContents().equals(gameModel.blocksData[2][0].getContents()))) {
+							(gameModel.blocksData[1][1].equals(gameModel.blocksData[0][2]) &&
+									gameModel.blocksData[0][2].equals(gameModel.blocksData[2][0]))) {
 						gameModel.setFinalResult("Player 2 wins!");
 						endGame();
 					} else if (gameModel.movesLeft == 0) {
@@ -330,10 +330,10 @@ public class RowGameController {
 				gameView.updateBlock(gameModel, 1, 2);
 				gameModel.player = "1";
 				if (gameModel.movesLeft < 7) {
-					if ((gameModel.blocksData[1][2].getContents().equals(gameModel.blocksData[0][2].getContents()) &&
-							gameModel.blocksData[0][2].getContents().equals(gameModel.blocksData[2][2].getContents())) ||
-							(gameModel.blocksData[1][2].getContents().equals(gameModel.blocksData[1][1].getContents()) &&
-									gameModel.blocksData[1][1].getContents().equals(gameModel.blocksData[1][0].getContents()))) {
+					if ((gameModel.blocksData[1][2].equals(gameModel.blocksData[0][2]) &&
+							gameModel.blocksData[0][2].equals(gameModel.blocksData[2][2])) ||
+							(gameModel.blocksData[1][2].equals(gameModel.blocksData[1][1]) &&
+									gameModel.blocksData[1][1].equals(gameModel.blocksData[1][0]))) {
 						gameModel.setFinalResult("Player 2 wins!");
 						endGame();
 					} else if (gameModel.movesLeft == 0) {
@@ -348,13 +348,13 @@ public class RowGameController {
 				gameView.updateBlock(gameModel, 2, 0);
 				gameModel.player = "1";
 				if (gameModel.movesLeft < 7) {
-					if ((gameModel.blocksData[2][0].getContents().equals(gameModel.blocksData[2][1].getContents()) &&
-							gameModel.blocksData[2][1].getContents().equals(gameModel.blocksData[2][2].getContents())) ||
-							(gameModel.blocksData[2][0].getContents().equals(gameModel.blocksData[1][0].getContents()) &&
-									gameModel.blocksData[1][0].getContents().equals(gameModel.blocksData[0][0].getContents()))
+					if ((gameModel.blocksData[2][0].equals(gameModel.blocksData[2][1]) &&
+							gameModel.blocksData[2][1].equals(gameModel.blocksData[2][2])) ||
+							(gameModel.blocksData[2][0].equals(gameModel.blocksData[1][0]) &&
+									gameModel.blocksData[1][0].equals(gameModel.blocksData[0][0]))
 							||
-							(gameModel.blocksData[2][0].getContents().equals(gameModel.blocksData[1][1].getContents()) &&
-									gameModel.blocksData[1][1].getContents().equals(gameModel.blocksData[0][2].getContents()))) {
+							(gameModel.blocksData[2][0].equals(gameModel.blocksData[1][1]) &&
+									gameModel.blocksData[1][1].equals(gameModel.blocksData[0][2]))) {
 						gameModel.setFinalResult("Player 2 wins!");
 						endGame();
 					} else if (gameModel.movesLeft == 0) {
@@ -369,10 +369,10 @@ public class RowGameController {
 				gameView.updateBlock(gameModel, 2, 1);
 				gameModel.player = "1";
 				if (gameModel.movesLeft < 7) {
-					if ((gameModel.blocksData[2][1].getContents().equals(gameModel.blocksData[2][0].getContents()) &&
-							gameModel.blocksData[2][0].getContents().equals(gameModel.blocksData[2][2].getContents())) ||
-							(gameModel.blocksData[2][1].getContents().equals(gameModel.blocksData[1][1].getContents()) &&
-									gameModel.blocksData[1][1].getContents().equals(gameModel.blocksData[0][1].getContents()))) {
+					if ((gameModel.blocksData[2][1].equals(gameModel.blocksData[2][0]) &&
+							gameModel.blocksData[2][0].equals(gameModel.blocksData[2][2])) ||
+							(gameModel.blocksData[2][1].equals(gameModel.blocksData[1][1]) &&
+									gameModel.blocksData[1][1].equals(gameModel.blocksData[0][1]))) {
 						gameModel.setFinalResult("Player 2 wins!");
 						endGame();
 					} else if (gameModel.movesLeft == 0) {
@@ -387,13 +387,13 @@ public class RowGameController {
 				gameView.updateBlock(gameModel, 2, 2);
 				gameModel.player = "1";
 				if (gameModel.movesLeft < 7) {
-					if ((gameModel.blocksData[2][2].getContents().equals(gameModel.blocksData[2][1].getContents()) &&
-							gameModel.blocksData[2][1].getContents().equals(gameModel.blocksData[2][0].getContents())) ||
-							(gameModel.blocksData[2][2].getContents().equals(gameModel.blocksData[1][2].getContents()) &&
-									gameModel.blocksData[1][2].getContents().equals(gameModel.blocksData[0][2].getContents()))
+					if ((gameModel.blocksData[2][2].equals(gameModel.blocksData[2][1]) &&
+							gameModel.blocksData[2][1].equals(gameModel.blocksData[2][0])) ||
+							(gameModel.blocksData[2][2].equals(gameModel.blocksData[1][2]) &&
+									gameModel.blocksData[1][2].equals(gameModel.blocksData[0][2]))
 							||
-							(gameModel.blocksData[2][2].getContents().equals(gameModel.blocksData[1][1].getContents()) &&
-									gameModel.blocksData[1][1].getContents().equals(gameModel.blocksData[0][0].getContents()))) {
+							(gameModel.blocksData[2][2].equals(gameModel.blocksData[1][1]) &&
+									gameModel.blocksData[1][1].equals(gameModel.blocksData[0][0]))) {
 						gameModel.setFinalResult("Player 2 wins!");
 						endGame();
 					} else if (gameModel.movesLeft == 0) {
