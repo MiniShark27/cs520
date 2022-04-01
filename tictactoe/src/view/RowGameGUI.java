@@ -12,9 +12,8 @@ import controller.RowGameController;
 
 public class RowGameGUI {
     public JFrame gui = new JFrame("Tic Tac Toe");
-    public RowGameModel gameModel = new RowGameModel();
     public JButton[][] blocks = new JButton[3][3];
-    public JButton reset = new JButton("Reset");
+    private JButton reset = new JButton("Reset");
     public JTextArea playerturn = new JTextArea();
 
     /**
