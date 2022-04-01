@@ -1,17 +1,12 @@
 package controller;
 
 import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JTextArea;
-import javax.swing.JPanel;
-import java.awt.*;
-import java.awt.event.*;
 
 import model.RowGameModel;
 import view.RowGameGUI;
 
 public class RowGameController {
-    public RowGameModel gameModel;
+	private RowGameModel gameModel;
     public RowGameGUI gameView;
 
     /**
@@ -403,7 +398,7 @@ public class RowGameController {
     /**
      * Ends the game disallowing further player turns.
      */
-    public void endGame() {
+		private void endGame() {
 	for(int row = 0;row<3;row++) {
 	    for(int column = 0;column<3;column++) {
 		gameView.blocks[row][column].setEnabled(false);
