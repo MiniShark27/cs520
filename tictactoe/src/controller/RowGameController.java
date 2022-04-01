@@ -70,29 +70,30 @@ public class RowGameController {
 		// Find block's row and column
 		RowBlockModel blockModel = null;
 		int blockModelRow = 0, blockModelColumn = 0;
-		for (; blockModelRow < 3; blockModelRow++) {
-			for (; blockModelColumn < 3; blockModelColumn++) {
+		for (blockModelRow = 0; blockModelRow < 3; blockModelRow++) {
+			for (blockModelColumn = 0; blockModelColumn < 3; blockModelColumn++) {
 				if (gameView.blocks[blockModelRow][blockModelColumn] == block) {
 					blockModel = gameModel.blocksData[blockModelRow][blockModelColumn];
 					break;
 				}
 			}
+			if (blockModel != null) {
+				break;
+			}
 		}
 
-		// Update block contents if found
+		// If block wasn't found, throw Exception
 		if (blockModel == null) {
-			System.out.println("Error: Block not found");
-			return;
-		} else {
-			blockModel.setContents("X");
-			gameView.updateBlock(gameModel, blockModelRow, blockModelColumn);
-			gameModel.player = gameModel.player.equals("1") ? "2" : "1";
+			throw new IllegalArgumentException("Block not found.");
 		}
+
+		// If block is found, update contents
+		String playerChar = gameModel.player.equals("1") ? "X" : "O";
+		blockModel.setContents(playerChar);
+		gameView.updateBlock(gameModel, blockModelRow, blockModelColumn);
 
 		// Check for win
-		boolean isWin = false;
-		String playerChar = gameModel.player.equals("1") ? "X" : "O";
-		isWin = checkColumn(blockModelColumn, playerChar);
+		boolean isWin = checkColumn(blockModelColumn, playerChar);
 		isWin = isWin || checkRow(blockModelRow, playerChar);
 		if (blockModelRow == blockModelColumn) {
 			isWin = isWin || checkDiagonal(true, playerChar);
@@ -115,6 +116,10 @@ public class RowGameController {
 		if (gameModel.getFinalResult() != null) {
 			gameView.playerturn.setText(gameModel.getFinalResult());
 		}
+
+		// Switch player (set at end because current player is used to format the final
+		// result if a player wins)
+		gameModel.player = gameModel.player.equals("1") ? "2" : "1";
 	}
 
 	/**
