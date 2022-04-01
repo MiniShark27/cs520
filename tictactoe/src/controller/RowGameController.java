@@ -58,7 +58,7 @@ public class RowGameController {
 	 *
 	 * @param block The block to be moved to by the current player
 	 */
-	public void move(JButton block) {
+	public void move(JButton block) throws IllegalArgumentException {
 		// Update remaining moves
 		gameModel.movesLeft--;
 		if (gameModel.movesLeft % 2 == 1) {
