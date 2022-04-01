@@ -26,6 +26,14 @@ public class RowGameController {
 		}
 	}
 
+	/**
+	 * Determines if the column is only filled with X's or O's.
+	 * 
+	 * @param column     The column to check
+	 * @param playerChar The player character to check for
+	 * @return True if the column is filled with the player character, false
+	 *         otherwise
+	 */
 	private boolean checkColumn(int column, String playerChar) {
 		for (int row = 0; row < 3; row++) {
 			if (!gameModel.blocksData[row][column].getContents().equals(playerChar)) {
@@ -35,6 +43,13 @@ public class RowGameController {
 		return true;
 	}
 
+	/**
+	 * Determines if the row is only filled with X's or O's.
+	 * 
+	 * @param row        The row to check
+	 * @param playerChar The player character to check for
+	 * @return True if the row is filled with the player character, false otherwise
+	 */
 	private boolean checkRow(int row, String playerChar) {
 		for (int column = 0; column < 3; column++) {
 			if (!gameModel.blocksData[row][column].getContents().equals(playerChar)) {
@@ -44,6 +59,15 @@ public class RowGameController {
 		return true;
 	}
 
+	/**
+	 * Determines if the diagonal is only filled with X's or O's.
+	 * 
+	 * @param isTopLeft  True if the diagonal is the top left to bottom right, false
+	 *                   otherwise
+	 * @param playerChar The player character to check for
+	 * @return True if the diagonal is filled with the player character, false
+	 *         otherwise
+	 */
 	private boolean checkDiagonal(boolean isTopLeft, String playerChar) {
 		for (int row = 0; row < 3; row++) {
 			if (!gameModel.blocksData[row][isTopLeft ? row : 2 - row].getContents().equals(playerChar)) {
