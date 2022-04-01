@@ -26,7 +26,7 @@ public class RowGameGUI {
         gui.setResizable(true);
 
         JPanel gamePanel = new JPanel(new FlowLayout());
-        JPanel game = new JPanel(new GridLayout(3,3));
+        JPanel game = new JPanel(new GridLayout(3, 3));
         gamePanel.add(game, BorderLayout.CENTER);
 
         JPanel options = new JPanel(new FlowLayout());
@@ -48,14 +48,14 @@ public class RowGameGUI {
         });
 
         // Initialize a JButton for each cell of the 3x3 game board.
-        for(int row = 0; row<3; row++) {
-            for(int column = 0; column<3 ;column++) {
+        for (int row = 0; row < 3; row++) {
+            for (int column = 0; column < 3; column++) {
                 blocks[row][column] = new JButton();
-                blocks[row][column].setPreferredSize(new Dimension(75,75));
+                blocks[row][column].setPreferredSize(new Dimension(75, 75));
                 game.add(blocks[row][column]);
                 blocks[row][column].addActionListener(new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
-			controller.move((JButton)e.getSource());
+                        controller.move((JButton) e.getSource());
                     }
                 });
             }
@@ -63,15 +63,15 @@ public class RowGameGUI {
     }
 
     /**
-     * Updates the block at the given row and column 
+     * Updates the block at the given row and column
      * after one of the player's moves.
      *
      * @param gameModel The RowGameModel containing the block
-     * @param row The row that contains the block
-     * @param column The column that contains the block
+     * @param row       The row that contains the block
+     * @param column    The column that contains the block
      */
     public void updateBlock(RowGameModel gameModel, int row, int column) {
-	blocks[row][column].setText(gameModel.blocksData[row][column].getContents());
-	blocks[row][column].setEnabled(gameModel.blocksData[row][column].getIsLegalMove());
+        blocks[row][column].setText(gameModel.blocksData[row][column].getContents());
+        blocks[row][column].setEnabled(gameModel.blocksData[row][column].getIsLegalMove());
     }
 }
