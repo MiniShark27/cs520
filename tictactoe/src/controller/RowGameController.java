@@ -83,12 +83,11 @@ public class RowGameController {
 	 * @param block The block to be moved to by the current player
 	 */
 	public void move(JButton block) throws IllegalArgumentException {
-		// Update remaining moves
-		gameModel.movesLeft--;
-		if (gameModel.movesLeft % 2 == 1) {
-			gameView.playerturn.setText("'X': Player 1");
-		} else {
-			gameView.playerturn.setText("'O': Player 2");
+		System.out.println(block.isEnabled());
+		// If block is not enabled, throw Exception
+		// (should not be enabled in gui, so should not happen)
+		if (!block.isEnabled()) {
+			throw new IllegalArgumentException("Block already occupied.");
 		}
 
 		// Find block's row and column
@@ -109,6 +108,14 @@ public class RowGameController {
 		// If block wasn't found, throw Exception
 		if (blockModel == null) {
 			throw new IllegalArgumentException("Block not found.");
+		}
+
+		// Update remaining moves
+		gameModel.movesLeft--;
+		if (gameModel.movesLeft % 2 == 1) {
+			gameView.playerturn.setText("'X': Player 1");
+		} else {
+			gameView.playerturn.setText("'O': Player 2");
 		}
 
 		// If block is found, update contents

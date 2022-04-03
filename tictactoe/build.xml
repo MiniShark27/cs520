@@ -35,6 +35,7 @@
                destdir="bin"
                debug="yes">
 	    <classpath path="bin"/>
+            <classpath location="${junit.jar}"/>
         </javac>
     </target>
 
