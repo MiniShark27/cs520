@@ -23,6 +23,7 @@
 		 version="true"
 		 access="private"
 		 use="true"
+         classpath="${junit.jar}"
 		 windowtitle="CS520 - Homework 1">
 	    <fileset dir="src"/>
 	</javadoc>
