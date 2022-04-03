@@ -7,7 +7,7 @@ import model.RowGameModel;
 import view.RowGameGUI;
 
 public class RowGameController {
-	private RowGameModel gameModel;
+	public RowGameModel gameModel;
 	public RowGameGUI gameView;
 
 	/**

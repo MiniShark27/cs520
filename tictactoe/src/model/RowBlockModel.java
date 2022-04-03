@@ -25,7 +25,7 @@ public class RowBlockModel {
      * @param game The game that will contain the new block
      * @throws IllegalArgumentException When the given game is null
      */
-    RowBlockModel(RowGameModel game) {
+    public RowBlockModel(RowGameModel game) {
         super();
 
         if (game == null) {
@@ -36,7 +36,7 @@ public class RowBlockModel {
         this.reset();
     }
 
-    public RowGameModel getGame() {
+    RowGameModel getGame() {
         return this.game;
     }
 
