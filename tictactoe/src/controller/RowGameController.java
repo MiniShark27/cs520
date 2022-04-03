@@ -83,7 +83,11 @@ public class RowGameController {
 	 * @param block The block to be moved to by the current player
 	 */
 	public void move(JButton block) throws IllegalArgumentException {
-		System.out.println(block.isEnabled());
+		// block can't be null
+		if (block == null) {
+			throw new IllegalArgumentException("Block is null");
+		}
+
 		// If block is not enabled, throw Exception
 		// (should not be enabled in gui, so should not happen)
 		if (!block.isEnabled()) {
@@ -121,6 +125,9 @@ public class RowGameController {
 		// If block is found, update contents
 		String playerChar = gameModel.player.equals("1") ? "X" : "O";
 		blockModel.setContents(playerChar);
+		// Block not set as not legal in v1.0.0, I added it so that the block won't be
+		// overwritten (so the invalid move test fails)
+		blockModel.setIsLegalMove(false);
 		gameView.updateBlock(gameModel, blockModelRow, blockModelColumn);
 
 		// Check for win
