@@ -4,7 +4,7 @@
 run the following:
 ```bash
 cd tictactoe
-java -cp bin RowGameApp
+ant compile
 ```
 
 ### To Run:
