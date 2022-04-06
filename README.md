@@ -1,13 +1,13 @@
-### How to run TicTacToe
+# How to run TicTacToe
 
-#### To Compile
+### To Compile
 run the following:
 ```bash
 cd tictactoe
 java -cp bin RowGameApp
 ```
 
-#### To run:
+### To Run:
 run the following: (If already compiled, don't need to run `ant compile`)
 ```bash
 cd tictactoe
@@ -15,7 +15,7 @@ ant compile
 java -cp bin RowGameApp
 ```
 
-#### To test
+### To Test
 run the following:
 ```bash
 cd tictactoe
