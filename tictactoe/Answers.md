@@ -19,7 +19,7 @@ Other things fixed:
      - I know this is not best practice since it makes the commits look bad (e.g. every line has spacing changes). But, it was hard to read the controller file with the code not having consistent indenting (had one line indented 4 units, then the next in the same scope indented 2...) so to make the changes more easily I ran it. Apologies for the ugly git logs.
 1. Added the test to the src folder (so that it could recognize the rest of the code inside it in vscode)
     - Added a .vscode file if you want to run the tests in vscode
-    - Added the JUnit jar file to the ant build file classpath to prevent errors when building
+    - Added the JUnit jar file to the ant build file class path to prevent errors when building
 1. And more... (I forgot some stuff)
 
 ## Design Patterns
