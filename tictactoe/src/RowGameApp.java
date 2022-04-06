@@ -1,7 +1,6 @@
 import controller.RowGameController;
 
-public class RowGameApp 
-{
+public class RowGameApp {
     /**
      * Starts a new game in the GUI.
      */
